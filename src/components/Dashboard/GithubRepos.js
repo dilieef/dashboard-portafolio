@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import { getGithubRepos } from "@/Lib/Github";
 
-export default async function GithubRepos({ username = "vercel" }) {
+export default async function GithubRepos({ username = "dilieef" }) {
     const repos = await getGithubRepos(username);
 
     return (

@@ -1,7 +1,7 @@
 import { getGithubProfile } from "@/Lib/Github";
 import Image from "next/image";
 
-export default async function GithubProfile({ username = "vercel" }) {
+export default async function GithubProfile({ username = "dilieef" }) {
     const profile = await getGithubProfile(username);
 
     if (!profile) {
