@@ -2,71 +2,83 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Briefcase, FileText, GitBranch, Home, Settings, User} from "lucide-react";
+import { Briefcase, FileText, GitBranch, Home, Menu, Settings, User, X } from "lucide-react";
+import { useState } from "react";
 
 const navItems = [
-    {
-        label: "Dashboard",
-        href: "/",
-        icon: Home,
-    },
-    {
-        label: "Sobre mi",
-        href: "/about",
-        icon: User,
-    },
-    {
-        label: "Proyectos",
-        href: "/projects",
-        icon: Briefcase,
-    },
-    {
-        label: "Roadmap",
-        href: "/roadmap",
-        icon: FileText,
-    },
-    {
-        label: "GitHub",
-        href: "/github",
-        icon: GitBranch,
-    },
-    {
-        label: "Settings",
-        href: "/settings",
-        icon: Settings,
-    },
+    { label: "Dashboard", href: "/", icon: Home },
+    { label: "Sobre mi", href: "/about", icon: User },
+    { label: "Proyectos", href: "/projects", icon: Briefcase },
+    { label: "Roadmap", href: "/roadmap", icon: FileText },
+    { label: "GitHub", href: "/github", icon: GitBranch },
+    { label: "Settings", href: "/settings", icon: Settings },
 ];
 
 export default function Sidebar() {
     const pathname = usePathname();
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <aside className="w-full lg:w-[280px] lg:min-h-screen shrink-0 bg-[#1C3044] text-[#8AAFC1] p-6 lg:p-8">
-            <h1 className="text-2xl font-bold mb-10">
-                Dilieef Dev
-            </h1>
+        <>
+            {/* Botón hamburguesa - solo visible en móvil */}
+            <button
+                onClick={() => setIsOpen(true)}
+                className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-xl bg-[#1C3044] text-white shadow-lg"
+            >
+                <Menu size={22} />
+            </button>
 
-            <nav className="grid grid-cols-2 gap-3 lg:block lg:space-y-4">
-                {navItems.map((item) => {
-                    const Icon = item.icon;
-                    const isActive = pathname === item.href;
+            {/* Overlay oscuro al abrir el menú */}
+            {isOpen && (
+                <div
+                    className="lg:hidden fixed inset-0 z-40 bg-black/50"
+                    onClick={() => setIsOpen(false)}
+                />
+            )}
 
-                    return (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            className={`p-3 rounded-xl cursor-pointer flex items-center gap-3 transition-all duration-300 ${
-                                isActive
-                                    ? "bg-zinc-700 text-white"
-                                    : "hover:bg-zinc-700"
-                            }`}
-                        >
-                            <Icon size={20} />
-                            {item.label}
-                        </Link>
-                    );
-                })}
-            </nav>
-        </aside>
+            {/* Sidebar */}
+            <aside className={`
+                fixed top-0 left-0 z-50 h-full w-[280px] bg-[#1C3044] text-[#8AAFC1] p-6 
+                transition-transform duration-300
+                ${isOpen ? "translate-x-0" : "-translate-x-full"}
+                lg:relative lg:translate-x-0 lg:min-h-screen lg:shrink-0 lg:p-8
+            `}>
+                <div className="flex items-center justify-between mb-10">
+                    <h1 className="text-2xl font-bold text-white">
+                        Dilieef Dev
+                    </h1>
+                    {/* Botón cerrar - solo visible en móvil */}
+                    <button
+                        onClick={() => setIsOpen(false)}
+                        className="lg:hidden text-[#8AAFC1] hover:text-white"
+                    >
+                        <X size={22} />
+                    </button>
+                </div>
+
+                <nav className="space-y-2">
+                    {navItems.map((item) => {
+                        const Icon = item.icon;
+                        const isActive = pathname === item.href;
+
+                        return (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`p-3 rounded-xl flex items-center gap-3 transition-all duration-300 ${
+                                    isActive
+                                        ? "bg-zinc-700 text-white"
+                                        : "hover:bg-zinc-700"
+                                }`}
+                            >
+                                <Icon size={20} />
+                                {item.label}
+                            </Link>
+                        );
+                    })}
+                </nav>
+            </aside>
+        </>
     );
 }
