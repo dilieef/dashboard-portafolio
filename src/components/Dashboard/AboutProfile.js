@@ -31,7 +31,7 @@ export default function AboutProfile() {
                                 <ExternalLink size={14} />
                                 GitHub
                             </a>
-                            <a href="mailto:tu-email@gmail.com" className="inline-flex items-center gap-2 rounded-xl border border-[#1C3044] dark:border-slate-600 px-4 py-2 text-sm font-semibold text-[#1C3044] dark:text-white transition hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <a href="mailto:cabezasdilieef@gmail.com" className="inline-flex items-center gap-2 rounded-xl border border-[#1C3044] dark:border-slate-600 px-4 py-2 text-sm font-semibold text-[#1C3044] dark:text-white transition hover:bg-slate-50 dark:hover:bg-slate-800">
                                 <Mail size={14} />
                                 Contacto
                             </a>
