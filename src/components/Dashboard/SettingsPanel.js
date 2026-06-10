@@ -126,7 +126,7 @@ export default function SettingsPanel() {
                 </p>
                 <div className="flex flex-wrap gap-3 mb-6">
                     <a
-                        href="mailto:tu-email@gmail.com"
+                        href="mailto:cabezasdilieef@gmail.com"
                         className="inline-flex items-center gap-2 rounded-xl bg-[#1C3044] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#24445F]"
                     >
                         <Mail size={14} />
@@ -142,7 +142,7 @@ export default function SettingsPanel() {
                         GitHub
                     </a>
                     <a
-                        href="https://wa.me/573000000000"
+                        href="https://wa.me/+57 3160531430"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 rounded-xl border border-emerald-500 px-4 py-2 text-sm font-semibold text-emerald-600 transition hover:bg-emerald-50 dark:hover:bg-emerald-900/20"
