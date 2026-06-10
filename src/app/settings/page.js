@@ -3,8 +3,8 @@ import DashboardSection from "@/components/Dashboard/DashboardSection";
 import SettingsPanel from "@/components/Dashboard/SettingsPanel";
 
 export const metadata = {
-    title: "Settings | Dilieef Dev",
-    description: "Preferencias locales y configuracion del perfil.",
+    title: "Contacto | Dilieef Dev",
+    description: "Contáctame para proyectos freelance o colaboraciones.",
 };
 
 export default function SettingsPage() {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Briefcase, FileText, GitBranch, Home, Menu, Settings, User, X } from "lucide-react";
+import { Briefcase, FileText, GitBranch, Home, Menu, Mail, User, X } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
@@ -11,7 +11,7 @@ const navItems = [
     { label: "Proyectos", href: "/projects", icon: Briefcase },
     { label: "Roadmap", href: "/roadmap", icon: FileText },
     { label: "GitHub", href: "/github", icon: GitBranch },
-    { label: "Settings", href: "/settings", icon: Settings },
+    { label: "Contacto", href: "/settings", icon: Mail },
 ];
 
 export default function Sidebar() {
