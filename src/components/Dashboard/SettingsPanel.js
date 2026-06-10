@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Github, MessageCircle, CheckCircle } from "lucide-react";
+import { Mail, GitBranch, MessageCircle, CheckCircle } from "lucide-react";
 
 const availability = [
     { label: "Disponible para freelance", value: "available", color: "bg-emerald-400" },
@@ -138,7 +138,7 @@ export default function SettingsPanel() {
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 rounded-xl border border-[#1C3044] dark:border-slate-600 px-4 py-2 text-sm font-semibold text-[#1C3044] dark:text-white transition hover:bg-slate-50 dark:hover:bg-slate-800"
                     >
-                        <Github size={14} />
+                        <GitBranch size={14} />
                         GitHub
                     </a>
                     <a
