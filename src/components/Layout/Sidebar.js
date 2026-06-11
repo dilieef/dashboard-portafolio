@@ -37,7 +37,6 @@ export default function Sidebar() {
             )}
 
             {/* Sidebar */}
-            // Cámbialo por esto
             <aside className={`
             fixed top-0 left-0 z-50 h-full w-[280px] bg-[#1C3044] text-[#8AAFC1] p-6 
             transition-transform duration-300
