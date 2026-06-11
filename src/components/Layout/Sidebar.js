@@ -37,12 +37,13 @@ export default function Sidebar() {
             )}
 
             {/* Sidebar */}
+            // Cámbialo por esto
             <aside className={`
-                fixed top-0 left-0 z-50 h-full w-[280px] bg-[#1C3044] text-[#8AAFC1] p-6 
-                transition-transform duration-300
-                ${isOpen ? "translate-x-0" : "-translate-x-full"}
-                lg:relative lg:translate-x-0 lg:min-h-screen lg:shrink-0 lg:p-8
-            `}>
+            fixed top-0 left-0 z-50 h-full w-[280px] bg-[#1C3044] text-[#8AAFC1] p-6 
+            transition-transform duration-300
+            ${isOpen ? "translate-x-0" : "-translate-x-full"}
+            lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 lg:shrink-0 lg:p-8 lg:overflow-y-auto
+`           }>
                 <div className="flex items-center justify-between mb-10">
                     <h1 className="text-2xl font-bold text-white">
                         Dilieef Dev
