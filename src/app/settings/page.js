@@ -10,7 +10,7 @@ export const metadata = {
 export default function SettingsPage() {
     return (
         <DashboardLayout
-            title="Settings"
+            title="Contacto"
             description="Preferencias locales y configuracion del perfil."
         >
             <DashboardSection>
