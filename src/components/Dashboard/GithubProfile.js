@@ -6,24 +6,25 @@ export default async function GithubProfile({ username = "dilieef" }) {
 
     if (!profile) {
         return (
-            <section className="rounded-2xl bg-white p-6 shadow-sm transition-colors dark:bg-slate-900">                <h2 className="text-xl font-bold text-[#1C3044]">
+            <section className="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm transition-colors">
+                <h2 className="text-xl font-bold text-[#1C3044] dark:text-white">
                     GitHub Profile
                 </h2>
-                <p className="mt-2 text-sm text-[#6B8BA4]">
-                    No se pudo cargar la informacion de GitHub.
+                <p className="mt-2 text-sm text-[#6B8BA4] dark:text-slate-400">
+                    No se pudo cargar la información de GitHub.
                 </p>
             </section>
         );
     }
 
     return (
-        <section className="rounded-2xl bg-white p-6 shadow-sm">
+        <section className="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm transition-colors">
             <div className="mb-6">
-                <h2 className="text-xl font-bold text-[#1C3044]">
+                <h2 className="text-xl font-bold text-[#1C3044] dark:text-white">
                     GitHub Profile
                 </h2>
-                <p className="mt-1 text-sm text-[#6B8BA4]">
-                    Datos publicos obtenidos desde la API de GitHub
+                <p className="mt-1 text-sm text-[#6B8BA4] dark:text-slate-400">
+                    Datos públicos obtenidos desde la API de GitHub
                 </p>
             </div>
 
@@ -37,18 +38,15 @@ export default async function GithubProfile({ username = "dilieef" }) {
                 />
 
                 <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-[#1C3044]">
+                    <h3 className="text-2xl font-bold text-[#1C3044] dark:text-white">
                         {profile.name || profile.login}
                     </h3>
-
-                    <p className="mt-1 text-sm text-[#6B8BA4]">
+                    <p className="mt-1 text-sm text-[#6B8BA4] dark:text-slate-400">
                         @{profile.login}
                     </p>
-
-                    <p className="mt-3 max-w-2xl text-sm leading-6 text-[#1C3044]">
-                        {profile.bio || "Este perfil no tiene bio publica."}
+                    <p className="mt-3 max-w-2xl text-sm leading-6 text-[#6B8BA4] dark:text-slate-400">
+                        {profile.bio || "Este perfil no tiene bio pública."}
                     </p>
-
                     <a
                         href={profile.html_url}
                         target="_blank"
@@ -56,33 +54,30 @@ export default async function GithubProfile({ username = "dilieef" }) {
                         className="mt-4 inline-flex rounded-xl bg-[#1C3044] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#24445F]"
                     >
                         Ver perfil en GitHub
-
                     </a>
 
                     <div className="mt-5 grid grid-cols-3 gap-3 text-center">
-                        <div className="rounded-xl bg-slate-50 p-3">
-                            <p className="text-lg font-bold text-[#1C3044]">
+                        <div className="rounded-xl bg-slate-50 dark:bg-slate-800 p-3">
+                            <p className="text-lg font-bold text-[#1C3044] dark:text-white">
                                 {profile.public_repos}
                             </p>
-                            <p className="text-xs text-[#6B8BA4]">
+                            <p className="text-xs text-[#6B8BA4] dark:text-slate-400">
                                 Repos
                             </p>
                         </div>
-
-                        <div className="rounded-xl bg-slate-50 p-3">
-                            <p className="text-lg font-bold text-[#1C3044]">
+                        <div className="rounded-xl bg-slate-50 dark:bg-slate-800 p-3">
+                            <p className="text-lg font-bold text-[#1C3044] dark:text-white">
                                 {profile.followers}
                             </p>
-                            <p className="text-xs text-[#6B8BA4]">
+                            <p className="text-xs text-[#6B8BA4] dark:text-slate-400">
                                 Followers
                             </p>
                         </div>
-
-                        <div className="rounded-xl bg-slate-50 p-3">
-                            <p className="text-lg font-bold text-[#1C3044]">
+                        <div className="rounded-xl bg-slate-50 dark:bg-slate-800 p-3">
+                            <p className="text-lg font-bold text-[#1C3044] dark:text-white">
                                 {profile.following}
                             </p>
-                            <p className="text-xs text-[#6B8BA4]">
+                            <p className="text-xs text-[#6B8BA4] dark:text-slate-400">
                                 Following
                             </p>
                         </div>
